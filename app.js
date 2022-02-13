@@ -30,7 +30,7 @@ const promptUser = () => {
     ]);
   };
 
-  const promptProject = () => {
+  const promptProject = portfolioData => {
     console.log(`
   =================
   Add a New Project
@@ -73,4 +73,7 @@ const promptUser = () => {
     ]);
   };
   
-  promptUser().then(answers => console.log(answers));
+  promptUser()
+  .then(answers => console.log(answers))
+  .then(promptProject)
+  .then(projectAnswers => console.log(projectAnswers))
