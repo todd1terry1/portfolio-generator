@@ -1,10 +1,3 @@
-// will be uncommented in lesson 4
-    // const pageHTML = generatePage(portfolioData);
-    // fs.writeFile('./index.html', pageHTML, err => {
-    //   if (err) throw new Error(err);
-    //   console.log('Page created! Check out index.html in this directory to see it!');
-    // });
-
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
@@ -50,6 +43,7 @@ const promptUser = () => {
       when: ({ confirmAbout }) => confirmAbout
     }
   ]);
+  fs.writeFile()
 };
 
 const promptProject = portfolioData => {
@@ -138,9 +132,9 @@ promptUser()
   .then(portfolioData => {
       const pageHTML = generatePage(portfolioData);
 
-    // fs.writeFile('./index.html', pageHTML, err => {
-    //   if (err) throw new Error(err);
+     fs.writeFile('./index.html', pageHTML, err => {
+       if (err) throw new Error(err);
 
     //   console.log('Page created! Check out index.html in this directory to see it!');
-    // });
+     });
   });
